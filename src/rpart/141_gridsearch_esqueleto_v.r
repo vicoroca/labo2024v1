@@ -109,7 +109,7 @@ archivo_salida <- "./exp/HT2020/gridsearch.txt"
 tb_grid_search <- data.table( max_depth = integer(),
                               min_split = integer(),
                               vmin_bucket = integer(),
-                              v_cp= integer()
+                              v_cp= integer(),
                               ganancia_promedio = numeric() )
 
 
