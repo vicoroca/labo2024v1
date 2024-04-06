@@ -17,17 +17,17 @@ require("ggplot2")
 
 # cambiar aqui los parametros
 PARAM <- list()
-#PARAM$minsplit <- 300 gra1
-#PARAM$minbucket <- 20
-#PARAM$maxdepth <- 11
+PARAM$minsplit <- 300 #gra1
+PARAM$minbucket <- 20
+PARAM$maxdepth <- 11
 
-#PARAM$minsplit <- 400 gra
+#PARAM$minsplit <- 400 #gra
 #PARAM$minbucket <- 10
 #PARAM$maxdepth <- 20
 
-PARAM$minsplit <- 500 #gra2
-PARAM$minbucket <- 250
-PARAM$maxdepth <- 3
+#PARAM$minsplit <- 500 #gra2
+#PARAM$minbucket <- 250
+#PARAM$maxdepth <- 3
 
 
 
