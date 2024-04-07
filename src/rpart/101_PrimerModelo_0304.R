@@ -7,10 +7,13 @@ require("rpart")
 require("rpart.plot")
 
 # Aqui se debe poner la carpeta de la materia de SU computadora local
-setwd("C:/Users/LENOVO/Desktop/LI1") # Establezco el Working Directory
+setwd("C:\\Users\\LENOVO\\Desktop\\LI1") # Establezco el Working Directory
 
 # cargo el dataset
+
 dataset <- fread("./dataset_pequeno.csv")
+
+
 
 dtrain <- dataset[foto_mes == 202107] # defino donde voy a entrenar
 dapply <- dataset[foto_mes == 202109] # defino donde voy a aplicar el modelo
@@ -20,11 +23,11 @@ dapply <- dataset[foto_mes == 202109] # defino donde voy a aplicar el modelo
 modelo <- rpart(
         formula = "clase_ternaria ~ .",
         data = dtrain, # los datos donde voy a entrenar
-        xval = 0,
-        cp = -0.5, # esto significa no limitar la complejidad de los splits
-        minsplit = 600, # minima cantidad de registros para que se haga el split
-        minbucket = 300, # tamaño minimo de una hoja
-        maxdepth = 6
+        xval = 5,
+        cp = -0.174417049440672, # esto significa no limitar la complejidad de los splits
+        minsplit = 5620, # minima cantidad de registros para que se haga el split
+        minbucket = 2081, # tamaño minimo de una hoja
+        maxdepth = 17
 ) # profundidad maxima del arbol
 
 
@@ -60,6 +63,7 @@ dapply[, Predicted := as.numeric(prob_baja2 > 1 / 40)]
 
 # solo los campos para Kaggle
 fwrite(dapply[, list(numero_de_cliente, Predicted)],
-        file = "./exp/Modelos/GS_100.csv",
+        file = "./exp/Modelos/HT_050.csv",
         sep = ","
 )
+
