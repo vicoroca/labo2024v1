@@ -11,7 +11,7 @@ require("rpart")
 
 # parmatros experimento
 PARAM <- list()
-PARAM$experimento <- 3520
+PARAM$experimento <- 3521
 
 # parameetros rpart
 PARAM$rpart_param <- list(
