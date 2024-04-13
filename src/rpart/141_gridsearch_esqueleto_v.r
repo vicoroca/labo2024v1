@@ -109,8 +109,13 @@ archivo_salida <- "./exp/HT2020/gridsearch.txt"
 tb_grid_search <- data.table( max_depth = integer(),
                               min_split = integer(),
                               vmin_bucket = integer(),
+<<<<<<< HEAD
                               v_cp= integer(),
                               ganancia_promedio = numeric() )
+=======
+                              v_cp= integer()
+                              ganancia_promedio = numeric())
+>>>>>>> 7de20605be5121cb922e1f199f533e0b4501a2e8
 
 
 # itero por los loops anidados para cada hiperparametro
