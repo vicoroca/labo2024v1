@@ -41,6 +41,7 @@ ksemilla_azar <- tabla_semillas[ 1, semilla ]  # 1 es mi primer semilla
 
 # cargo los datos
 dataset <- fread("./datasets/dataset_pequeno.csv")
+nrow(dataset)
 
 
 # creo la carpeta donde va el experimento
