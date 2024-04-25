@@ -162,15 +162,9 @@ FE_historia_guantesblancos <- function( pmyexp, pinputexps, pserver="local")
 
   # no me engraso las manos con los Canaritos Asesinos
   # varia de 0.0 a 2.0, si es 0.0 NO se activan
-<<<<<<< HEAD
-  param_local$CanaritosAsesinos$ratio <- 0.0
+  param_local$CanaritosAsesinos$ratio <- 2
   # desvios estandar de la media, para el cutoff
-  param_local$CanaritosAsesinos$desvios <- 4.0
-=======
-  param_local$CanaritosAsesinos$ratio <- 1.5
-  # desvios estandar de la media, para el cutoff
-  param_local$CanaritosAsesinos$desvios <- 5.0
->>>>>>> 3d0bd727ec08bf275486c55be751c97c5798ffde
+  param_local$CanaritosAsesinos$desvios <- 2.03
 
   return( exp_correr_script( param_local ) ) # linea fija
 }
@@ -324,33 +318,18 @@ corrida_guantesblancos_202109 <- function( pnombrewf, pvirgen=FALSE )
 {
   if( -1 == exp_wf_init( pnombrewf, pvirgen) ) return(0) # linea fija
 
-<<<<<<< HEAD
-  DT_incorporar_dataset_default( "DT0001", "competencia_2024.csv.gz")
-  CA_catastrophe_default( "CA0001", "DT0001" )
+  DT_incorporar_dataset_default( "DT0005", "competencia_2024.csv.gz")
+  CA_catastrophe_default( "CA0005", "DT0005" )
 
-  DR_drifting_guantesblancos( "DR0001", "CA0001" )
-  FE_historia_guantesblancos( "FE0001", "DR0001" )
+  DR_drifting_guantesblancos( "DR0005", "CA0005" )
+  FE_historia_guantesblancos( "FE0005", "DR0005" )
 
-  TS_strategy_guantesblancos_202109( "TS0001", "FE0001" )
+  TS_strategy_guantesblancos_202109( "TS0005", "FE0005" )
 
-  HT_tuning_guantesblancos( "HT0001", "TS0001" )
-
-  # El ZZ depente de HT y TS
-  ZZ_final_guantesblancos( "ZZ0001", c("HT0001","TS0001") )
-=======
-  DT_incorporar_dataset_default( "DT0004", "competencia_2024.csv.gz")
-  CA_catastrophe_default( "CA0004", "DT0004" )
-
-  DR_drifting_guantesblancos( "DR0004", "CA0004" )
-  FE_historia_guantesblancos( "FE0004", "DR0004" )
-
-  TS_strategy_guantesblancos_202109( "TS0004", "FE0004" )
-
-  HT_tuning_guantesblancos( "HT0004", "TS0004" )
+  HT_tuning_guantesblancos( "HT0005", "TS0005" )
 
   # El ZZ depente de HT y TS
-  ZZ_final_guantesblancos( "ZZ00041", c("HT0004","TS0004") )
->>>>>>> 3d0bd727ec08bf275486c55be751c97c5798ffde
+  ZZ_final_guantesblancos( "ZZ0005", c("HT0005","TS0005") )
 
 
   exp_wf_end( pnombrewf, pvirgen ) # linea fija
@@ -367,21 +346,12 @@ corrida_guantesblancos_202107 <- function( pnombrewf, pvirgen=FALSE )
   if( -1 == exp_wf_init( pnombrewf, pvirgen) ) return(0) # linea fija
 
   # Ya tengo corrido FE0001 y parto de alli
-<<<<<<< HEAD
-  TS_strategy_guantesblancos_202107( "TS0002", "FE0001" )
+  TS_strategy_guantesblancos_202107( "TS00052", "FE0005" )
 
-  HT_tuning_guantesblancos( "HT0002", "TS0002" )
-
-  # El ZZ depente de HT y TS
-  ZZ_final_guantesblancos( "ZZ0002", c("HT0002", "TS0002") )
-=======
-  TS_strategy_guantesblancos_202107( "TS00042", "FE0004" )
-
-  HT_tuning_guantesblancos( "HT00042", "TS00042" )
+  HT_tuning_guantesblancos( "HT00052", "TS00052" )
 
   # El ZZ depente de HT y TS
-  ZZ_final_guantesblancos( "ZZ00042", c("HT00042", "TS00042") )
->>>>>>> 3d0bd727ec08bf275486c55be751c97c5798ffde
+  ZZ_final_guantesblancos( "ZZ00052", c("HT00052", "TS00052") )
 
 
   exp_wf_end( pnombrewf, pvirgen ) # linea fija
