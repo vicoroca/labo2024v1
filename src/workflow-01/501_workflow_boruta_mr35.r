@@ -126,7 +126,7 @@ FE_historia_boruta <- function( pmyexp, pinputexps, pserver="local")
   if( -1 == (param_local <- exp_init( pmyexp, pinputexps, pserver ))$resultado ) return( 0 )# linea fija
 
 
-  param_local$meta$script <- "/src/workflow-01/541_FE_historia_boruta.r"
+  param_local$meta$script <- "/src/workflow-01/541_FE_historia_boruta_1.r"
 
   param_local$lag1 <- TRUE
   param_local$lag2 <- FALSE # no me engraso con los lags de orden 2
@@ -171,7 +171,7 @@ FE_historia_boruta <- function( pmyexp, pinputexps, pserver="local")
   param_local$Boruta$enabled <- TRUE
   param_local$Boruta$train_from <- 202101
   param_local$Boruta$train_to <- 202101
-  param_local$Boruta$max_runs <- 30
+  param_local$Boruta$max_runs <- 35
 
   return( exp_correr_script( param_local ) ) # linea fija
 }
