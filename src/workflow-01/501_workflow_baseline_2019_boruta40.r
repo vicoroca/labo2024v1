@@ -329,7 +329,7 @@ ZZ_final_guantesblancos <- function( pmyexp, pinputexps, pserver="local")
 # Que predice 202109
 # y ya genera archivos para Kaggle
 
-corrida_guantesblancos_202109 <- function( pnombrewf, pvirgen=FALSE )
+corrida_BORUTA40_202109 <- function( pnombrewf, pvirgen=FALSE )
 {
   if( -1 == exp_wf_init( pnombrewf, pvirgen) ) return(0) # linea fija
   
