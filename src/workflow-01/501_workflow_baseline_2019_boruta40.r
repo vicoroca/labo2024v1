@@ -188,7 +188,7 @@ FE_historia_guantesblancos <- function( pmyexp, pinputexps, pserver="local")
 #   entreno en solo tres meses   ( mas guantes blancos no se puede )
 #   y solo incluyo en el dataset al 5% de los CONTINUA
 
-#TS_strategy_guantesblancos_202109 <- function( pmyexp, pinputexps, pserver="local")
+TS_strategy_guantesblancos_202109 <- function( pmyexp, pinputexps, pserver="local")
 {
   if( -1 == (param_local <- exp_init( pmyexp, pinputexps, pserver ))$resultado ) return( 0 )# linea fija
   
@@ -329,7 +329,7 @@ ZZ_final_guantesblancos <- function( pmyexp, pinputexps, pserver="local")
 # Que predice 202109
 # y ya genera archivos para Kaggle
 
-corrida_BORUTA40_202109 <- function( pnombrewf, pvirgen=FALSE )
+corrida_guantesblancos_202109 <- function( pnombrewf, pvirgen=FALSE )
 {
   if( -1 == exp_wf_init( pnombrewf, pvirgen) ) return(0) # linea fija
   
@@ -378,7 +378,7 @@ corrida_BORUTA40_202109 <- function( pnombrewf, pvirgen=FALSE )
 
 # Hago primero esta corrida que me genera los experimentos
 # DT0035, CA0035, DR0035, FE0035, TS0035, HT0035 y ZZ0035
-corrida_BORUTA40_202109( "BOR40" )
+corrida_guantesblancos_202109( "BOR40" )
 
 
 # Luego partiendo de  FE0035
