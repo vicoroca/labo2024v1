@@ -157,14 +157,14 @@ TS_strategy_baseline_202109 <- function( pmyexp, pinputexps, pserver="local")
 {
   if( -1 == (param_local <- exp_init( pmyexp, pinputexps, pserver ))$resultado ) return( 0 )# linea fija
 
-  param_local$meta$script <- "/src/workflow-01/z551_TS_training_strategy.r"
+  param_local$meta$script <- "/src/workflow-01/551_TS_training_strategy_guantesnegros.r"
 
 
   param_local$future <- c(202109)
-  param_local$final_train <- c(202107, 202106, 202105, 202104, 202103, 202102, 202101, 202012, 202011)
+  param_local$final_train <- c(202107, 202106, 202105)
 
 
-  param_local$train$training <- c(202105, 202104, 202103, 202102, 202101, 202012, 202011, 202010, 202009)
+  param_local$train$training <- c(202105, 202104, 202103)
   param_local$train$validation <- c(202106)
   param_local$train$testing <- c(202107)
 
@@ -180,15 +180,16 @@ TS_strategy_baseline_202107 <- function( pmyexp, pinputexps, pserver="local")
 {
   if( -1 == (param_local <- exp_init( pmyexp, pinputexps, pserver ))$resultado ) return( 0 )# linea fija
 
-  param_local$meta$script <- "/src/workflow-01/z551_TS_training_strategy.r"
+  param_local$meta$script <- "/src/workflow-01/551_TS_training_strategy_guantesnegros.r"
 
 
-  param_local$future <- future
-  param_local$final_train <- final_train
+  param_local$future <- c(202107)
+  param_local$final_train <- c(202105, 202104, 202103)
 
-  param_local$train$training <- training
-  param_local$train$validation <- validation
-  param_local$train$testing <- testing 
+
+  param_local$train$training <-  c(202103, 202102, 202101)
+  param_local$train$validation <- c(202104)
+  param_local$train$testing <- c(202105)
 
    #undersampling  baseline
   param_local$train$undersampling <- 0.5
@@ -241,8 +242,8 @@ HT_tuning_baseline <- function( pmyexp, pinputexps, pserver="local")
     extra_trees = FALSE,
     # Quasi  baseline, el minimo learning_rate es 0.02 !!
     learning_rate = c( 0.01, 0.5 ),
-    feature_fraction = c( 0.5, 0.9 ),
-    num_leaves = c( 8L, 2048L,  "integer" ),
+    feature_fraction = c( 0.3, 0.7 ),
+    num_leaves = c( 10L, 500L,  "integer" ),
     min_data_in_leaf = c( 100L, 2000L, "integer" )
   )
 
